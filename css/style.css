@@ -181,6 +181,9 @@ button, input {
     height: 150px;
   }
 
+  .modalIconCart {
+    margin-top: 20px;
+  }
 
   .burger {
     display: block;
@@ -275,19 +278,18 @@ button, input {
   .floating-search-button,
   .modalIconCart {
     bottom: 1.5rem;
-    left: auto;
-    right: 1.5rem;
+    left: 90%;
+    
   }
 
   .search-modal {
-    right: 1.5rem;
-    left: auto;
+    left: 90%;
   }
  
 
   .search-modal.expanded {
-    top: 75%;
-    left: 60.5%;
+    top: 74.7%;
+    left: 67%;
     transform: translateX(-50%);
   }
   
@@ -313,6 +315,9 @@ button, input {
     width: 60%;
   }
   
+
+
+
   .categories-section {
     display: none;
 
