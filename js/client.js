@@ -1,5 +1,5 @@
 // === client.js ===
-import { showMessage } from "./cart.js";
+import { showMessage } from "./interface.js";
 
 let currentUser = null;
 

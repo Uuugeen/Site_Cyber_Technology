@@ -2,18 +2,7 @@
 
 import { PRODUCTS } from './shared.js';
 import { prepareOrder } from './client.js';
-
-// Додаємо універсальну функцію для повідомлень
-export function showMessage(text, timeout = 2000) {
-  const message = document.getElementById('message');
-  if (message) {
-    message.innerText = text;
-    message.classList.add('show');
-    setTimeout(() => {
-      message.classList.remove('show');
-    }, timeout);
-  }
-}
+import { showMessage } from './interface.js';
 
 document.addEventListener('click', (e) => {
   const checkoutBtn = e.target.closest('#checkoutBtn');
@@ -27,7 +16,6 @@ document.addEventListener('click', (e) => {
     prepareOrder(rawCart, PRODUCTS);
   }
 });
-
 
 let cart = [];
 

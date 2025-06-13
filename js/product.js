@@ -1,8 +1,9 @@
 // === product.js ===
 
 import { PRODUCTS, CATEGORIES } from './shared.js';
-import { addToCart, showMessage } from './cart.js';
+import { addToCart } from './cart.js';
 import { renderCatalog } from './catalog.js';
+import { showMessage } from './interface.js';
 
 
 

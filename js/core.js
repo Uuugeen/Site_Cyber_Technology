@@ -5,6 +5,7 @@ import { renderCategories, renderBestsellers } from './product.js';
 import { loadCartFromStorage } from './cart.js';
 import { loadUserFromStorage, initClientUI } from './client.js';
 import { renderCatalog, renderCatalogFilter } from './catalog.js'; // Виправлено імпорт
+import { initThemeToggle, initBurgerMenu } from './interface.js';
 
 export const Core = {
   init() {
@@ -16,7 +17,10 @@ export const Core = {
     renderCatalogFilter(); // Додайте цей рядок
     renderCatalog(); // Ініціалізуємо каталог при старті
     console.log('Core ініціалізовано');
-
+      // === Тема ===
+    initThemeToggle();
+    // === Бургер-меню ===
+    initBurgerMenu();
   }
 };
 
