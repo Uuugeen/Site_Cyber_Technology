@@ -1,41 +1,45 @@
-У цьому проєкті реалізовано інтернет-магазин сучасної електроніки "Кібер-Техніка" з такими основними функціями:
+This project implements an online store of modern electronics "Kyber-Technika" with the following main functions:
 
-Головна сторінка (index.html):
+Home page (index.html):
 
-Хедер з логотипом, навігацією, перемикачем теми (світла/темна), кнопками входу та кошика.
-Головний банер із закликом перейти до каталогу.
-Динамічний список категорій товарів.
-Блок "Хіти продажів" з популярними товарами.
-Каталог товарів із фільтрацією за категоріями та пошуком.
-Модальні вікна для входу, реєстрації, перегляду профілю, деталей товару, кошика, оформлення замовлення, зміни пароля, перегляду замовлень.
+Header with logo, navigation, theme switcher (light/dark), login and cart buttons.
+Main banner with a call to go to the catalog.
+Dynamic list of product categories.
+"Bestsellers" block with popular products.
+Product catalog with filtering by categories and search.
+Modal windows for login, registration, viewing profile, product details, cart, placing an order, changing password, viewing orders.
 
-Каталог та категорії:
+Catalog and categories:
 
-Категорії та товари зберігаються у масивах CATEGORIES та PRODUCTS.
-Категорії та товари рендеряться динамічно через renderCategories, renderBestsellers, renderCatalog.
-Фільтрація каталогу за категоріями та пошуковим запитом.
+Categories and products are stored in the CATEGORIES and PRODUCTS arrays.
+Categories and products are rendered dynamically via renderCategories, renderBestsellers, renderCatalog.
+Catalog filtering by categories and search query.
 
-Кошик:
+Cart:
 
-Додавання/видалення товарів у кошик, підрахунок суми, збереження у localStorage.
-Оформлення замовлення з формою контактних даних.
-Перегляд останніх замовлень у профілі користувача.
+Add/remove items to cart, calculate amount, save to localStorage.
 
-Аутентифікація та профіль:
+Place order with contact form.
 
-Простий вхід/реєстрація з перевіркою пароля.
-Збереження користувача у localStorage.
-Можливість редагувати профіль, змінювати пароль, переглядати історію замовлень.
+View recent orders in user profile.
 
-Інтерфейс:
+Authentication and profile:
 
-Адаптивна верстка (CSS, медіа-запити).
-Темна/світла тема.
-Модальні вікна для взаємодії з користувачем.
-Повідомлення про дії (додавання в кошик, очищення кошика, успішне замовлення тощо).
+Simple login/registration with password verification.
 
-Структура коду:
+Save user to localStorage.
+Ability to edit profile, change password, view order history.
 
-Код розділено на модулі: cart.js, catalog.js, client.js, core.js, product.js, shared.js.
-Вся логіка роботи з DOM, localStorage, модалками, кошиком, каталогом та користувачем реалізована на чистому JavaScript.
-Проєкт є повністю фронтенд-реалізацією без бекенду, зберігання даних відбувається у браузері (localStorage).
+Interface:
+
+Responsive layout (CSS, media queries).
+
+Dark/light theme.
+Modal windows for user interaction.
+Notifications about actions (add to cart, clear cart, successful order, etc.).
+
+Code structure:
+
+The code is divided into modules: cart.js, catalog.js, client.js, core.js, product.js, shared.js.
+All logic for working with DOM, localStorage, modals, cart, catalog, and user is implemented in pure JavaScript.
+The project is a completely front-end implementation without a backend, data storage takes place in the browser (localStorage).
