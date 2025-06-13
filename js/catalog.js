@@ -8,6 +8,8 @@ const categoryFilter = document.getElementById('catalogCategoryFilter');
 const resetBtn = document.getElementById('resetCatalogFilter');
 const searchLabel = document.getElementById('searchQueryLabel');
 
+if (categoryFilter) categoryFilter.value = '';
+
 export function renderCatalog(categoryId = null, searchQuery = '') {
   if (!catalogList) return;
 
@@ -90,3 +92,13 @@ export function renderCatalogFilter() {
     };
   }
 }
+
+export function triggerSearch() {
+  const searchInput = document.getElementById('searchInput');
+  const query = searchInput ? searchInput.value.trim() : '';
+  renderCatalog(null, query);
+}
+
+
+
+

@@ -2,7 +2,7 @@
 
 import { Core } from './core.js';
 import { showProductDetails } from './product.js';
-import { renderCatalog, renderCatalogFilter } from './catalog.js';
+import { renderCatalog, renderCatalogFilter, triggerSearch } from './catalog.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,6 +73,7 @@ if (searchBtn && searchModal) {
 
     if (isOpen && searchInput.value.trim()) {
       triggerSearch();
+      searchModal.classList.remove('expanded');
     } else if (!isOpen) {
       searchModal.classList.add('expanded');
       setTimeout(() => searchInput.focus(), 300);
@@ -80,4 +81,14 @@ if (searchBtn && searchModal) {
       searchModal.classList.remove('expanded');
     }
   });
+
+  // Додаємо обробник Enter
+  if (searchInput) {
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && searchInput.value.trim()) {
+        triggerSearch();
+        searchModal.classList.remove('expanded');
+      }
+    });
+  }
 }
