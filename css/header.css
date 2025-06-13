@@ -1,0 +1,74 @@
+/* Хедер */
+
+.site-header {
+  background: var(--surface);
+  color: var(--surface-contrast);
+  box-shadow: inset 2px -2px 4px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+  transition: 0.5s ease-in-out;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: var(--text);
+  font-weight: bold;
+  transition: color 0.3s;
+  
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+  text-shadow: 2px 2px 20px var(--accent);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  max-width: 1.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
+  transform: scale(110%);
+  filter: drop-shadow(1px 1px 5px var(--surface-contrast));
+  
+  
+}
+
+.header-actions button {
+  margin-left: 1rem;
+  background: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.header-actions button:hover {
+  background: var(--accent-hover);
+}

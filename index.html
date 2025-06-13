@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Кібер-Техніка - Інтернет-магазин</title>
+
+  <!-- Шрифти та стилі -->
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Хедер -->
+  <header class="site-header">
+    <div class="container header-wrapper">
+      <div class="logo">Кібер-Техніка</div>
+      <div class="burger" id="burgerBtn">&#9776;</div>
+      <nav class="main-nav" id="mainNav">
+        <button id="closeNavBtn" class="close-nav-btn">&times;</button>
+        <ul>
+          <li><a href="#bestsellers">Хіти продажів</a></li>
+          <li><a href="#catalogPage">Каталог</a></li>
+          <li><a href="#about">Про нас</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="theme-toggle">
+            <svg id="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 81.289 81.289"
+                xml:space="preserve" width="1.5rem" height="1.5rem">
+              <g>
+                <path d="M79.248,38.668c-1.246-0.464-2.669-0.088-3.518,0.95c-4.791,5.84-11.858,9.192-19.403,9.192
+                    c-13.833,0-25.083-11.255-25.083-25.083c0-6.963,2.808-13.441,7.908-18.242c0.977-0.918,1.26-2.357,0.705-3.579
+                    c-0.552-1.222-1.818-1.959-3.157-1.826C15.778,2.112,0,19.511,0,40.555c0,22.424,18.245,40.669,40.672,40.669
+                    c22.16,0,40.002-17.363,40.616-39.528C81.324,40.355,80.508,39.136,79.248,38.668z M40.671,74.953
+                    c-18.971,0-34.402-15.43-34.402-34.4c0-14.93,9.389-27.69,22.859-32.43c-2.714,4.689-4.156,10.022-4.156,15.605
+                    c0,17.292,14.065,31.355,31.357,31.355c6.317,0,12.373-1.882,17.479-5.322C69.82,64.399,56.557,74.953,40.671,74.953z"/>
+              </g>
+            </svg>
+        </div>
+        <button id="loginBtn" class="buttonsSite" style="margin-bottom: 0;">Вхід</button>
+        <button id="cartBtn" class="buttonsSite" style="margin-bottom: 0;">Кошик (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Головний банер -->
+  <section class="hero-section">
+    <div class="container" style="height: auto;">
+      <h1>Сучасна електроніка для кожного</h1>
+      <p>Обирай кращі технології разом із нами</p>
+      <a href="#catalogPage" class="btn-primary">До каталогу</a>
+    </div>
+  </section>
+
+  <!-- Категорії -->
+  <section class="categories-section">
+    <div class="container" id="categoryList">
+      <!-- Динамічні категорії -->
+    </div>
+  </section>
+
+  <!-- Хіти продажів -->
+  <section class="bestsellers-section" id="bestsellers">
+    <div class="container">
+      <h2>Хіти продажів</h2>
+      <div class="product-list" id="bestsellerProducts">
+        <!-- Динамічні товари -->
+      </div>
+    </div>
+  </section>
+
+  <!--Візуальний розподіл-->
+  <div class="green-line">
+
+  </div>
+
+  <section id="catalogPage" class="catalog-section">
+    <div class="container">
+      <h2>Каталог товарів</h2>
+      <div class="catalog-filters-row">
+        <select id="catalogCategoryFilter"></select>
+        <button id="resetCatalogFilter" class="reset-filter-btn buttonsSite">Скинути фільтр</button>
+        <div id="searchQueryLabel" class="search-label" style="display: none;"></div>
+      </div>
+      <div class="product-list" id="catalogList">
+        <!-- Сюди буде виведено товари -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Модальне вікно входу -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="loginModal">&times;</span>
+      <h3>Авторизація</h3>
+      <form id="loginForm">
+        <input type="text" name="username" placeholder="Ім'я користувача" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Пароль" required>
+        <button type="submit" class="buttonsSite">Увійти</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальне вікно інформації про користувача -->
+  <div class="modal" id="userInfoModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="userInfoModal">&times;</span>
+      <div id="userInfoBlock"></div>
+    </div>
+  </div>
+
+  <!-- Модальне вікно інформації про товар -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content" >
+      <span class="close-btn" data-close="infoModal">&times;</span>
+      <div id="infoModalContent"></div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Модальне вікно кошика -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content modal-content-1">
+      <span class="close-btn" data-close="cartModal">&times;</span>
+      <h3>Ваш кошик</h3>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <div>
+          <span>Сума:</span> 
+          <strong id="cartTotal">
+            0 ₴
+            
+          </strong>
+        </div>
+        <button id="clearCartBtn" class="clearCartBtn buttonsSite">
+            <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.82907 7.48718H18.6325V20.1197C18.6325 21.2242 17.7371 22.1197 16.6325 22.1197H7.82907C6.7245 22.1197 5.82907 21.2242 5.82907 20.1197V7.48718Z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 4.74353L20.4615 4.74353" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.9134 2H9.54816L8.57266 4.74359H15.8889L14.9134 2Z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+      </div>
+      <button id="checkoutBtn" class="buttonsSite">Оформити замовлення</button>
+    </div>
+  </div>
+
+
+  <!--Плаваюче вікно кошика-->
+  <div id="modalIconCart" class="modalIconCart">
+    <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 10L18.5145 17.4276C18.3312 18.3439 18.2396 18.8021 18.0004 19.1448C17.7894 19.447 17.499 19.685 17.1613 19.8326C16.7783 20 16.3111 20 15.3766 20H8.62337C7.6889 20 7.22166 20 6.83869 19.8326C6.50097 19.685 6.2106 19.447 5.99964 19.1448C5.76041 18.8021 5.66878 18.3439 5.48551 17.4276L4 10M20 10H18M20 10H21M4 10H3M4 10H6M6 10H18M6 10L9 4M18 10L15 4M9 13V16M12 13V16M15 13V16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+
+  <!-- Фіксована кнопка пошуку, яка стає інпутом -->
+  <div id="searchModal" class="search-modal">
+    <div class="search-modal-content">
+      <input type="text" id="searchInput" placeholder="Пошук товарів..." />
+    </div>
+  </div>
+
+  <button id="searchToggleBtn" class="floating-search-button" style="padding: 0.5rem;">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+
+
+  <!-- Модальне вікно оформлення замовлення -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="checkoutModal">&times;</span>
+      <h3>Оформити замовлення</h3>
+      <form id="checkoutForm">
+        <input name="username" placeholder="Ім’я" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input name="phone" placeholder="Телефон" required />
+        <input name="address" placeholder="Адреса доставки" required />
+        <button type="submit">Підтвердити замовлення</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Модальне вікно деталей замовлення -->
+  <div class="modal" id="orderDetailsModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="orderDetailsModal">&times;</span>
+      <div id="orderDetailsContent"></div>
+    </div>
+  </div>
+
+  <div class="green-line"></div> 
+
+  <!-- Футер -->
+  <footer class="site-footer">
+    <div class="container">
+      <div id="about" class="footer-about">
+        <h2>Про компанію</h2>
+        <p><span class="Tab">Ласкаво</span> просимо до Кібер-Техніки — онлайн-магазину, створеного для справжніх поціновувачів сучасної електроніки та інноваційних технологій.
+        Ми пропонуємо широкий вибір техніки — від потужних комп’ютерів і ноутбуків до аксесуарів, гаджетів та комплектуючих.
+        Наша команда складається з молодих і завзятих фахівців, які не лише розуміються на техніці, а й щиро нею захоплюються. Ми постійно стежимо за новинками ринку, щоб першими запропонувати вам найкраще.<br><br>
+        &#10004; Швидка доставка<br>
+        &#10004; Гарантія на всі товари<br>
+        &#10004; Професійна підтримка клієнтів<br>
+        &#10004; Зручна система фільтрів і кошик із збереженням у браузері<br><br>
+        Кібер-Техніка — це не просто магазин. Це місце, де технології стають ближчими.</p>
+      </div>
+      <div id="contacts" class="footer-contacts">
+        <h2>Контакти</h2>
+        <p>Email: info@cybertech.ua</p>
+        <p>Телефон: +38 (044) 123-45-67</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Гарантія</a>
+        <a href="#">Повернення</a>
+        <a href="#">Політика конфіденційності</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="modal" id="changePasswordModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="changePasswordModal">&times;</span>
+      <h3>Зміна паролю</h3>
+      <form id="changePasswordForm">
+        <input type="password" name="oldPassword" placeholder="Старий пароль" required />
+        <input type="password" name="newPassword" placeholder="Новий пароль" required />
+        <button type="submit">Підтвердити</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="modal" id="editProfileModal">
+    <div class="modal-content">
+      <span class="close-btn" data-close="editProfileModal">&times;</span>
+      <h3>Редагування профілю</h3>
+      <form id="editProfileForm">
+        <input type="text" name="username" placeholder="Ім’я користувача" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="phone" placeholder="Телефон" />
+        <input type="text" name="address" placeholder="Адреса" />
+        <button type="button" id="changePasswordBtn" class="buttonsSite">Змінити пароль</button>
+        <button type="submit" class="buttonsSite">Зберегти зміни</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div id="message" class="message-popup"></div>
+
+  <!-- Скрипти -->
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+/*=======================Main CSS File=====================*/
+
+
+
+
+.hero-section {
+  background: var(--accent);
+  color: var(--bg);
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;          
+  position: relative;
+}
+
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #333;
+}
+
+/* Категорії, хіти */
+.categories-section, .bestsellers-section {
+  background: var(--surface);
+  transition: background 0.3s;
+  padding: 3rem 0;
+}
+
+.bestsellers-section {
+}
+
+.container h2 {
+  margin-bottom: 2rem;
+}
+
+.categories-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  transition: background 0.3s;
+  
+  position: relative;
+
+
+}
+
+.categories-section .container{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem;
+}
+
+.category-card {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 -2px 4px var(--accent);
+  border: solid 3px var(--accent);
+  cursor: pointer; /* Додаємо курсор */
+}
+
+
+
+.category-card h3 {
+  margin: 1rem 0; 
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 10px  var(--accent-hover);
+  border: solid 3px var(--accent-hover);  
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  max-width: 274.5px;
+  width: 100%;
+}
+
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  object-fit:contain;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
+  background-color: var(--bg);
+}
+
+.green-line {
+  width: 100%;
+  height: 5rem;
+  background: var(--accent);
+  color: var(--bg);
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Каталог товарів*/
+.catalog-section {
+  background: var(--surface);
+  padding: 3rem 0;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#catalogCategoryFilter {
+  font-family: inherit;
+  margin-bottom: 2rem;
+  background: var(--surface) ;
+  color: var(--surface-contrast);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.reset-filter-btn {
+  background: var(--accent);
+  color: black;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  
+  
+}
+.reset-filter-btn:hover {
+  background: var(--accent-hover);
+}
+/* Модальні вікна */
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#infoModal .modal-content {
+  max-width: 70vw;
+}
+
+.modal-content {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+
+
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal button {
+  background: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.cart-decrease, .cart-increase {
+  background: var(--accent);
+  color: black;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  max-width: 3rem;
+  text-align: center;
+  padding: 0;
+}
+
+.cart-total {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.cart-item {
+  padding: 0.5rem 0;
+  
+}
+
+.clearCartBtn {
+  max-width: 3rem;
+  
+}
+
+.modalIconCart {
+  position: fixed;
+  top: 90%;
+  left: 95%;
+  width: 100%;
+  height: 100%;
+  max-width: 3rem;
+  max-height: 3rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  background: var(--accent);
+  color: black;
+  cursor: pointer;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.modalIconCart:hover {
+  background: var(--accent-hover);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.product-info-modal {
+  max-width: 800px;
+  min-height: 80vh;
+  overflow-y: auto;
+}
+
+.product-info-modal {
+  max-width: 800px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.product-info-layout {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.product-info-image img {
+  max-width: 250px;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info-details {
+  flex: 1;
+}
+
+.product-info-details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-info-details .price {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.product-info-specs h3 {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.product-info-specs ul {
+  padding-left: 3rem;
+  list-style: disc;
+  padding-bottom: 2rem;
+}
+
+.product-info-specs button {
+  max-width: 30%;
+  margin-left: 1rem;
+}
+
+.details-btn {
+  background: var(--accent);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin: 1rem 0;
+}
+.details-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* Стилізація скролбару для модального вікна */
+.product-info-modal,
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) var(--surface); /* для Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.product-info-modal::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+  width: 20px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.product-info-modal::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 2px solid var(--surface);
+}
+
+.product-info-modal::-webkit-scrollbar-track,
+.modal-content::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.floating-search-button {
+  position: fixed;
+  top: 80%;
+  left: 95%;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  max-width: 3rem;
+  max-height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 800;
+  transition: 0.3s ease-in-out;
+}
+
+.floating-search-button:hover {
+  background: var(--accent-hover);
+  scale: 1.1;
+}
+
+.search-modal {
+  position: fixed;
+  top: 80%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  z-index: 800;
+  transition: all 0.4s ease;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border: 3px solid var(--accent);
+  
+}
+
+.search-modal.expanded {
+  width: 250px;
+  height: 3.5rem;
+  border-radius: 2rem;
+  position: fixed;
+  top: 80%;
+  left: 88.5%;
+  transform: translate(-50%, -50%);
+  z-index: 800;
+}
+
+.search-modal-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  background: var(--surface);
+}
+
+.search-modal.expanded .search-modal-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.search-modal-content input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--surface-contrast);
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  outline: none;
+  width: 100%;
+}
+
+.search-modal-content button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--surface-contrast);
+  z-index: 800;
+}
+
+.search-label {
+  color: var(--surface-contrast);
+  background-color: var(--surface);
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+  max-width: 30rem;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+.catalog-filters-row {
+  display: flex;
+  align-items: stretch; 
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#catalogCategoryFilter,
+.reset-filter-btn,
+.catalog-filters-row .search-label {
+  height: 2rem;             
+  font-size: 1rem;                 
+  padding: 0 0.8rem;         
+}
+
+.catalog-filters-row .search-label {
+  min-width: 0;           
+  max-width: none;        
+  white-space: nowrap;
+  
+}
+
+
+
