@@ -1,6 +1,6 @@
 # 🛒 Kyber-Technika – Modern Electronics Store
 
-**🌐 Live Site:** [https://uuugeen.github.io/Site_Cyber_Technology/](https://uuugeen.github.io/Site_Cyber_Technology/)
+[**🌐 Live Site:**](https://uuugeen.github.io/Site_Cyber_Technology/)
 
 A fully client-side online store prototype for modern electronics — built with HTML, CSS, and JavaScript. Includes authentication, product catalog, cart, and order flow, all powered by localStorage.
 
